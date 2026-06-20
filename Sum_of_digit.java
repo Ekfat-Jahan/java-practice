@@ -1,24 +1,31 @@
 import java.util.Scanner;
-
 public class Sum_of_digit {
+	//method
+	public static int sum(int n) {
+		int remainder=0;
+		int sum=0;
+		while(n>0)
+		{
+			remainder=n%10;
+			sum+=remainder;
+			n=n/10;
+		}
+		return sum;
+			
+		
+	}
 
 	public static void main(String[] args) {
-		//Scanner class
-		Scanner input=new Scanner(System.in);
+		//scanner class
+		Scanner input=new Scanner (System.in);
 		//getting input
-		System.out.println("Enter a number:");
+		System.out.println("Enter 5 digit positive integer number:");
 		int num=input.nextInt();
-		//logic
-		int sum=0;
-		while(num>0)
-		{
-			int remainder=num%10;
-			sum+=remainder;
-			num=num/10;
-		}
-		System.out.println("Sum of digits: "+sum);
-		//close input
+		//calling method
+		System.out.println("The summation of all 5 digit is: "+sum(num));
+		//closing input
 		input.close();
+		
 		
 
 	}
